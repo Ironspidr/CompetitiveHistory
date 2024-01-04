@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Card, Button } from "@material-tailwind/react";
+import { Card, Button, Menu } from "@material-tailwind/react";
+import MenuBar from "../MenuBar";
 
-export default function Table23(props) {
+export default function Tables21() {
   const apiUrl = "https://www.nj-web.com/pubDB/CompetitiveHistory.json";
   const [data, setData] = useState([]);
   const fetchData = () => {
@@ -17,30 +18,18 @@ export default function Table23(props) {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
-    <div className="App">
-      <form>
-        <select name="year">
-          <option value="2023" selected>
-            2023
-          </option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <option value="2019">2019</option>
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-        </select>
-        <select name="conf">
-          <option value="ISLC">ISLC</option>
-          <option value="SLC">SLC</option>
-          <option value="NLC">NLC</option>*
-        </select>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="App ">
+      <div className="mx-auto max-w-screen-md pt-5 pb-7 pl-48">
+        <MenuBar />
+      </div>
 
       <Card className="h-full w-full overflow-scroll">
-        <table className="table-auto">
+        <table className="table-auto border-collapse border-spacing-1 border border-slate-500 text-center">
+          <caption className="text-2xl text-blue-gray-800 font-medium">
+            Competitive History of 2021
+          </caption>
           <thead>
             <tr>
               <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
@@ -84,4 +73,11 @@ export default function Table23(props) {
       </Card>
     </div>
   );
+}
+
+async function GetData23() {
+  const apiUrl = "https://www.nj-web.com/pubDB/CompetitiveHistory.json";
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data;
 }

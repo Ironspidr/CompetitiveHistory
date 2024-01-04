@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, Button, Menu } from "@material-tailwind/react";
 import MenuBar from "../MenuBar";
 
-export default function Table23(props) {
+export default function Table23() {
   const apiUrl = "https://www.nj-web.com/pubDB/CompetitiveHistory.json";
   const [data, setData] = useState([]);
   const fetchData = () => {
@@ -18,9 +18,10 @@ export default function Table23(props) {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="App ">
-      <div className="mx-auto max-w-screen-md pt-5 pb-7 ">
+      <div className="mx-auto max-w-screen-md pt-5 pb-7 pl-48">
         <MenuBar />
       </div>
 
@@ -72,4 +73,11 @@ export default function Table23(props) {
       </Card>
     </div>
   );
+}
+
+async function GetData23() {
+  const apiUrl = "https://www.nj-web.com/pubDB/CompetitiveHistory.json";
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data;
 }

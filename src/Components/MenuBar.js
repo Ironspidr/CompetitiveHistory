@@ -10,7 +10,6 @@ export default function MenuBar() {
         <a href="/2020">2020</a>
         <a href="/2019">2019</a>
         <a href="/2018">2018</a>
-        <a href="/2017">2017</a>
       </Breadcrumbs>
     </div>
   );

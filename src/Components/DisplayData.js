@@ -21,7 +21,6 @@ export default function DisplayData(props) {
           <Route path="/2020" element={<Table20 />} />
           <Route path="/2019" element={<Table19 />} />
           <Route path="/2018" element={<Table18 />} />
-          <Route path="/2017" element={<Table17 />} />
         </Routes>
       </BrowserRouter>
       <Breadcrumbs separator=" | "></Breadcrumbs>
