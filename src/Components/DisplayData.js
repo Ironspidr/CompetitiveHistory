@@ -14,13 +14,13 @@ export default function DisplayData(props) {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Table23 />} />
-          <Route path="/2023" element={<Table23 />} />
-          <Route path="/2022" element={<Table22 />} />
-          <Route path="/2021" element={<Table21 />} />
-          <Route path="/2020" element={<Table20 />} />
-          <Route path="/2019" element={<Table19 />} />
-          <Route path="/2018" element={<Table18 />} />
+          <Route path="/CompetitiveHistory/" element={<Table23 />} />
+          <Route path="/CompetitiveHistory/2023" element={<Table23 />} />
+          <Route path="/CompetitiveHistory/2022" element={<Table22 />} />
+          <Route path="/CompetitiveHistory/2021" element={<Table21 />} />
+          <Route path="/CompetitiveHistory/2020" element={<Table20 />} />
+          <Route path="/CompetitiveHistory/2019" element={<Table19 />} />
+          <Route path="/CompetitiveHistory/2018" element={<Table18 />} />
         </Routes>
       </BrowserRouter>
       <Breadcrumbs separator=" | "></Breadcrumbs>
